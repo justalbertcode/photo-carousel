@@ -1,0 +1,81 @@
+:root {
+    --bg-color: #000;
+    --font-family: Arial, sans-serif;
+    --carousel-width: 1000px;
+    --carousel-img-width: 300px;
+    --carousel-img-height: 500px;
+    --btn-padding: 10px 20px;
+    --btn-margin: 10px;
+    --highlight-color: red;
+    --shadow-color: #fff;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-color);
+    font-family: var(--font-family);
+    margin: 0;
+  }
+  
+  .wrapper {
+    position: relative;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #fff;
+    margin-bottom: 30px;
+  }
+  
+  .carousel {
+    width: var(--carousel-width);
+    height: 100%;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    border-radius: 40px;
+    box-shadow: 1px 1px 30px 1px var(--shadow-color);
+  }
+  
+  .carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  
+  .carousel > img {
+    width: var(--carousel-img-width);
+    height: var(--carousel-img-height);
+    object-fit: cover;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+  
+  .carousel-btns {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+  
+  button {
+    padding: var(--btn-padding);
+    margin: var(--btn-margin);
+    cursor: pointer;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+  }
+  
+  button:hover {
+    color: var(--highlight-color);
+  }
+  
