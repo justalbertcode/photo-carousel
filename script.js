@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://images.unsplash.com/photo-1618849888041-fe81e92b733e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=400"
   ];
 
-  let currentIndex = 0; // Индекс текущего изображения
+  let currentIndex = 0; 
 
   const renderImages = (container, sources) => {
     sources.forEach(link => {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const updateCarousel = () => {
-    // Прокрутка до текущего изображения
+    
     const offset = currentIndex * (parseInt(getComputedStyle(carousel).getPropertyValue('--carousel-img-width')));
     carousel.scrollTo({
       left: offset,
